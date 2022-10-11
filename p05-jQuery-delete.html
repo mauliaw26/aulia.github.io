@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>JQuery Delete</title>
+</head>
+<body>
+    
+    <center><h2>5 teman terbaik di kampus</h2>
+
+        <table style="width:100%">
+  <table align="center">
+    <tr class="sirah-tabel">
+      <th class="batur">No</th>
+      <th class="batur">Nama</th>
+      <th class="batur">Alamat</th>
+      <th class="batur">Aksi</th>
+    </tr>
+    <tr id="garis__1" class="garis">
+      <td class="batur">1</td>
+      <td class="batur" id="mhsw__1">Windi</td>
+      <td class="batur" id="tempat__1">Majalengka</td>
+      <td class="aksi batur" id="hapus__1">Hapus</td>
+    </tr>
+    <tr id="garis__2" class="garis">
+      <td class="batur">2</td>
+      <td class="batur" id="mhsw__2">Firly</td>
+      <td class="batur" id="tempat__2">Majalengka</td>
+      <td class="aksi batur" id="hapus__2">Hapus</td>
+    </tr>
+    <tr id="garis__3" class="garis">
+      <td class="batur">3</td>
+      <td class="batur" id="mhsw__3">Andin</td>
+      <td class="batur" id="tempat__3">Kuningan</td>
+      <td class="aksi batur" id="hapus__3">Hapus</td>
+    </tr>
+    <tr id="garis__4" class="garis">
+      <td class="batur">4</td>
+      <td class="batur" id="mhsw__4">Ica</td>
+      <td class="batur" id="tempat__4">Kuningan</td>
+      <td class="aksi batur" id="hapus__4">Hapus</td>
+    </tr>
+    <tr id="garis__5" class="garis">
+      <td class="batur">5</td>
+      <td class="batur" id="mhsw__5">Fany</td>
+      <td class="batur" id="tempat__5">Kuningan</td>
+      <td class="aksi batur" id="hapus__5">Hapus</td>
+    </tr>
+  </table>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script>$(document).ready(function(){
+    $('.batur').click(function(){
+        let isi = $(this).text();
+        let tid = $(this).prop('id');
+        let rid = tid.split('__');
+        let id_baris = rid[1];
+        let mhsw = $('#mhsw__'+id_baris).text();
+  
+        if(isi=='Hapus'){
+            let konfirmasi = confirm(`Mau hapus ${mhsw}??`);
+            if(!konfirmasi) return;
+  
+            $('#garis__'+id_baris).fadeOut();
+  
+        }else{
+            alert("Anda berada di kolom : " + $(this).html() + "!");
+        }
+    })
+  })</script>
+  <style>
+    table {
+ border: 3px solid rgb(255, 255, 255);
+   background-color:  rgb(0, 213, 255);
+   padding: auto;
+   margin-left: 50px;
+   margin-right: 50px;
+ }
+
+ h1 {
+   text-align: center;
+ }
+ 
+ .batur{
+   border: 5px rgb(131, 11, 186);
+   text-align: center;
+   padding: 17px;
+ }
+ 
+ .batur:hover {
+   background-color: rgb(236, 79, 79);
+ }
+  
+ .sirah-tabel {
+   background-color: rgb(47, 0, 255);
+ }
+ 
+ .tabel {
+   border-collapse: collapse;
+   width: 100%;
+ }
+ 
+ .aksi-batur {
+   background-color: rgb(1, 91, 91);
+ }
+ 
+ .aksi-batur:hover {
+   background-color: rgb(181, 236, 2);
+</style>
+</body>
+</html>
